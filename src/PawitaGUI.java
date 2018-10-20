@@ -1,5 +1,8 @@
 import javax.swing.*;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 public class PawitaGUI {
@@ -10,7 +13,13 @@ public class PawitaGUI {
     }
 
     public void showGUI() {
-        JButton b=new JButton("click");//creating instance of JButton
+        JButton b=new JButton("ME");
+        b.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Yeah");
+            }
+        });//creating instance of JButton
         b.setBounds(130,100,100, 40);
 
         jFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
